@@ -77,7 +77,7 @@ MongoClient.connect(process.env.DB_URL, function (error, client) {
 	
 	app.get('/classification', (call, answer) => {
 		const spawn = require('child_process').spawn;
-		const result_01 = spawn('python', ['classification.py'], );
+		const result_01 = spawn('python3', ['classification.py'], );
 		result_01.stdout.on('data', (result)=>{
 			console.log(result.toString());
 		});
